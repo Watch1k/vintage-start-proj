@@ -1,0 +1,22 @@
+include ../partials/variables
+include ../partials/mixins
+doctype html
+html(lang='ru')
+	block variables
+		include ../components/head
+		body
+			div.svg-container(style="position: absolute; width: 0; height: 0; overflow: hidden;")
+				include ../partials/sprite.svg
+				// Global baseUrl and webpackManifest variables (for back-end purpose), picture element HTML5 shiv
+				script.
+					document.createElement('picture');
+					window.baseUrl = location.origin;
+					window.webpackManifest = !{JSON.stringify(webpackManifest)};
+				block header
+					include ../components/header
+				// Main content
+				block main
+					main
+				include ../components/footer
+				// Scripts
+				script(src='js/index.bundle.js')

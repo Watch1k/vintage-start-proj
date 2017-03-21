@@ -1,0 +1,24 @@
+html
+	width: 100%
+	@media (min-width: $minDesk)
+		overflow-x: hidden
+		
+body
+	max-width: 1280px
+	margin: 0 auto
+	background-color: white
+	+r($tab)
+		overflow-x: hidden
+		max-width: 100%
+	
+	&.has-preloader
+		max-height: 100vh
+		overflow: hidden
+		
+	&.menu-active
+		overflow: hidden !important
+		position: fixed
+		top: 0
+		left: 0
+		right: 0
+		height: 100%
